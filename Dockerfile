@@ -9,7 +9,7 @@ RUN cd $GOPATH/src/github.com/improbable-eng/grpc-web && go install ./go/grpcweb
 
 FROM gcr.io/distroless/base-debian11
 
-COPY --from=builder /go/bin/grpcwebproxy .
+COPY --from=builder /go/bin/grpcwebproxy /grpcwebproxy
 
 EXPOSE 8080 8443
 
